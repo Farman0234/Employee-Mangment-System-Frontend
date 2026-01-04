@@ -14,7 +14,7 @@ const AdminTabel = () => {
     const fetchLeaves = async () => {
         try {
             setLoading(true)
-            const res = await axios.get("http://localhost:5699/api/leaves", {
+            const res = await axios.get("https://employee-mangment-system-backend.vercel.app/api/leaves", {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("token")}`,
                 },

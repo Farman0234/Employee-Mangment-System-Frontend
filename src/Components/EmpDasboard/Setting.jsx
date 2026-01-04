@@ -43,7 +43,7 @@ const Setting = () => {
         setLoading(true)
 
         try {
-            const response = await axios.put("http://localhost:5699/api/setting/change-password",
+            const response = await axios.put("https://employee-mangment-system-backend.vercel.app/api/setting/change-password",
                 setting, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("token")}`,

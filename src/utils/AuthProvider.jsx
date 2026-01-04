@@ -19,7 +19,7 @@ export const AuthProvider = ({ children }) => {
           return;
         }
 
-        const res = await axios.get("http://localhost:5699/api/auth/verify", {
+        const res = await axios.get("https://employee-mangment-system-backend.vercel.app/api/auth/verify", {
           headers: { Authorization: `Bearer ${token}` }
         });
 

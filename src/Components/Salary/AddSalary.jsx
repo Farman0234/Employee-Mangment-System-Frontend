@@ -62,7 +62,7 @@ const AddSalary = () => {
         try {
             const token = localStorage.getItem("token");
             const res = await axios.post(
-                `http://localhost:5699/api/salary/add`,
+                `https://employee-mangment-system-backend.vercel.app/api/salary/add`,
                 employee,
                 {
                     headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },

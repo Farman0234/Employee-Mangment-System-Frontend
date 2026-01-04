@@ -36,7 +36,7 @@ const Add = () => {
         })
         try {
             const token = localStorage.getItem("token");
-            const response = await axios.post("http://localhost:5699/api/employee/add", formDataObj, {
+            const response = await axios.post("https://employee-mangment-system-backend.vercel.app/api/employee/add", formDataObj, {
                 headers: { Authorization: `Bearer ${token}` },
                 "Content-Type": "multipart/form-data"
             });
