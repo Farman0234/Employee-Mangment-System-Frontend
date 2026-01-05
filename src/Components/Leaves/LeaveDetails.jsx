@@ -41,8 +41,8 @@ const LeaveDetails = () => {
     const changeStatus = async (id, status) => {
         try {
             const response = await axios.put(
-                `http://localhost:5699/api/leaves/${id}`,
-                { status: status }, // ✅ Send as object with status property
+                `https://employee-mangment-backend.vercel.app/api/leaves/${id}`,
+                { status: status }, 
                 {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem("token")}`,

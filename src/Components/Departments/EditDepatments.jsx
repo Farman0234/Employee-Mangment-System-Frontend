@@ -47,7 +47,7 @@ const EditDepartments = () => {
         setLoading(true);
         try {
             const token = localStorage.getItem("token");
-            const response = await axios.put(`http://localhost:5699/api/department/${id}`, department, {
+            const response = await axios.put(`https://employee-mangment-backend.vercel.app/api/department/${id}`, department, {
                 headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" }
             });
             if (response.data.success) {

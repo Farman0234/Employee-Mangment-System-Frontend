@@ -76,7 +76,7 @@ const EmployeeEdit = () => {
 
         try {
             const token = localStorage.getItem("token");
-            const response = await axios.put(`http://localhost:5699/api/employee/${id}`, employee, {
+            const response = await axios.put(`https://employee-mangment-backend.vercel.app/api/employee/${id}`, employee, {
                 headers: { 
                     Authorization: `Bearer ${token}`,
                     "Content-Type": "application/json"
