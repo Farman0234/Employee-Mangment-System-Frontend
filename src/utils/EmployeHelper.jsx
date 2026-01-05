@@ -4,7 +4,7 @@ import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
 // API Base URL - centralize for easy updates
-const API_BASE_URL = "https://employee-mangment-backend.vercel.app";
+const API_BASE_URL = "https://employee-mangment-backend.vercel.app/api";
 
 // Helper to get auth headers
 const getAuthHeaders = () => ({
