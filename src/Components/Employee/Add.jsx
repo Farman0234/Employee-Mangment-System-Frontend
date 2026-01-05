@@ -123,7 +123,6 @@ const Add = () => {
                                     name="profileImage"
                                     accept='image/*'
                                     className='hidden'
-                                    required
                                 />
                             </label>
                             <p className='text-xs text-gray-500 mt-2'>PNG, JPG up to 5MB</p>
