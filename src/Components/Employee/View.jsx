@@ -16,7 +16,7 @@ const View = () => {
         const fetchEmployee = async () => {
             setEmpLoaading(true);
             try {
-                const response = await axios.get(`https://employee-mangment-system-backend.vercel.app/api/employee/${id}`,
+                const response = await axios.get(`https://employee-mangment-backend.vercel.app/api/employee/${id}`,
                     {
                         headers: {
                             Authorization: `Bearer ${localStorage.getItem("token")}`,

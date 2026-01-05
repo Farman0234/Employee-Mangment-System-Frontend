@@ -18,7 +18,7 @@ const LeaveList = () => {
   const fetchLeaves = async () => { 
     setIsLoading(true);
     try {
-      const res = await axios.get(`https://employee-mangment-system-backend.vercel.app/api/leaves/${id}`, {
+      const res = await axios.get(`https://employee-mangment-backend.vercel.app/api/leaves/${id}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },

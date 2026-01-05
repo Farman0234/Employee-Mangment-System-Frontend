@@ -53,7 +53,7 @@ const AddLeaves = () => {
     setIsLoading(true);
     try {
       const response = await axios.post(
-        'https://employee-mangment-system-backend.vercel.app/api/leaves/add',
+        'https://employee-mangment-backend.vercel.app/api/leaves/add',
         leaveData,
         {
           headers: {

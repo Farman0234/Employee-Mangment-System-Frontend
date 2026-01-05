@@ -20,7 +20,7 @@ const AddDepartments = () => {
         setLoading(true);
         try {
             const token = localStorage.getItem("token");
-            const response = await axios.post("https://employee-mangment-system-backend.vercel.app/api/department/add", departments, {
+            const response = await axios.post("https://employee-mangment-backend.vercel.app/api/department/add", departments, {
                 headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" }
             });
             if (response.data.success) {
