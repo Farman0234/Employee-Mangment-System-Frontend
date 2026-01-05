@@ -19,7 +19,7 @@ function Login() {
         setIsLoading(true);
 
         try {
-            const res = await axios.post("https://employee-mangment-backend.vercel.app//api/auth/login", {
+            const res = await axios.post("https://employee-mangment-backend.vercel.app/api/auth/login", {
                 email,
                 password
             });
