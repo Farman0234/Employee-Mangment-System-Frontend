@@ -11,21 +11,6 @@ const getAuthHeaders = () => ({
     Authorization: `Bearer ${localStorage.getItem("token")}`
 });
 
-
-
-const handleBlock = async (id) => {
-  try {
-    await axios.patch(
-      `${API_BASE_URL}/employee/block/${id}`
-    );
-    toast.success("Status updated");
-    fetchEmployees(); // refresh list
-  } catch (error) {
-    toast.error("Action failed");
-  }
-};
-
-
 // Fetch all departments
 export const fetchDepartments = async () => {
     try {
@@ -123,10 +108,10 @@ export const EmployeeButtons = ({ empid, onEmployeeDelete }) => {
                 Leaves
             </button>
             <button
-               onClick={() => handleBlock(emp._id, emp.userID.isBlocked)}
+                onClick={() => navigate(`/admin-dashboard/employee/leaves/block/${empid}`)}
                 className="px-3 py-1.5 bg-red-600 hover:bg-yellow-700 text-white rounded-lg transition-colors duration-200 text-sm font-medium"
             > 
-                {emp.userID.isBlocked ? "Unblock" : "Block"}
+                Block
             </button>
 
         </div>
