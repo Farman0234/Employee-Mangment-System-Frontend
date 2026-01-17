@@ -49,6 +49,12 @@ export const AuthProvider = ({ children }) => {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
   };
+  if (user.isBlocked) {
+    return res.status(403).json({
+      success: false,
+      error: "Your account is blocked. Contact admin."
+    });
+  }
 
   return (
     <UserContext.Provider value={{ user, login, logout, loading }}>
