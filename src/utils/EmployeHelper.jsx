@@ -122,7 +122,7 @@ export const EmployeeButtons = ({ empid, onEmployeeDelete }) => {
                 }}
                 className="px-3 py-1.5 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors duration-200 text-sm font-medium"
             >
-                {isBlocked ? "Unblock" : "Block"}
+                 Block/Unblock
             </button>
 
         </div>
