@@ -188,7 +188,7 @@ const List = () => {
                               <img
                                 src={
                                   emp.profileImage
-                                    ? `http://localhost:5699/uploads/${emp.profileImage}`
+                                    ? `https://employee-mangment-backend.vercel.app/uploads/${emp.profileImage}`
                                     : "/avatar.png"
                                 }
                                 alt="profile"
