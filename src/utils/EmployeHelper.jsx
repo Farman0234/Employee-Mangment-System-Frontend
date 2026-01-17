@@ -108,10 +108,21 @@ export const EmployeeButtons = ({ empid, onEmployeeDelete }) => {
                 Leaves
             </button>
             <button
-                onClick={() => navigate(`/admin-dashboard/employee/leaves/block/${empid}`)}
-                className="px-3 py-1.5 bg-red-600 hover:bg-yellow-700 text-white rounded-lg transition-colors duration-200 text-sm font-medium"
-            > 
-                Block
+                onClick={async () => {
+                    try {
+                        const response = await axios.put(`${API_BASE_URL}/employee/block/${empid}`, {
+                            // empty body
+                        }, { headers: getAuthHeaders() });
+
+                        toast.success(response.data.message);
+                    } catch (err) {
+                        const msg = err.response?.data?.error || err.message;
+                        toast.error(msg);
+                    }
+                }}
+                className="px-3 py-1.5 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors duration-200 text-sm font-medium"
+            >
+                {isBlocked ? "Unblock" : "Block"}
             </button>
 
         </div>
