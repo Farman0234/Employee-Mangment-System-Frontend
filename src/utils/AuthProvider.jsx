@@ -50,10 +50,7 @@ export const AuthProvider = ({ children }) => {
     localStorage.removeItem("user");
   };
 
-  if (res.data.user.isBlocked) {
-    toast.error("Your account is blocked. Contact admin.");
-    return setUser(null);
-  }
+  
   return (
     <UserContext.Provider value={{ user, login, logout, loading }}>
       {children}
