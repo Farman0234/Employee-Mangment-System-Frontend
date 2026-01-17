@@ -7,7 +7,7 @@ import { useAuth } from '../../utils/AuthProvider';
 
 const View = () => {
     const { id } = useParams();
-    const { user } = useAuth()
+    const {user} = useAuth()
     const [employee, setEmployees] = useState(null);
     const [empLoading, setEmpLoaading] = useState(true);
     const navigate = useNavigate();
@@ -90,7 +90,7 @@ const View = () => {
                                     <img
                                         src={
                                             employee?.userID?.profileImage
-                                                ? `https://employee-mangment-backend.vercel.app/uploads/${employee.userID.profileImage}`
+                                                ? `http://localhost:5699/uploads/${employee.userID.profileImage}`
                                                 : "/avatar.png"
                                         }
                                         alt="Employee"
@@ -268,23 +268,23 @@ const View = () => {
                         </div>
 
                         {/* Action Buttons */}
-                        {user.role === "admin" && (
-                            <div className="px-6 pb-8 flex flex-col sm:flex-row justify-center gap-4 border-t border-gray-200 pt-6">
-                                <Link
-                                    to={`/admin-dashboard/employee/edit/${id}`}
-                                    className="flex items-center justify-center space-x-2 px-8 py-3 bg-gradient-to-r from-teal-500 to-teal-600 text-white font-semibold rounded-lg hover:from-teal-600 hover:to-teal-700 transition-all shadow-lg hover:shadow-xl"
-                                >
-                                    <FaEdit />
-                                    <span>Edit Profile</span>
-                                </Link>
-                                <Link
-                                    to="/admin-dashboard/employee"
-                                    className="px-8 py-3 bg-white text-gray-700 font-semibold rounded-lg border-2 border-gray-300 hover:border-gray-400 hover:bg-gray-50 transition-all shadow-md hover:shadow-lg text-center"
-                                >
-                                    Back to List
-                                </Link>
-                            </div>
-                        )}
+                         {user.role ==="admin" && (
+                        <div className="px-6 pb-8 flex flex-col sm:flex-row justify-center gap-4 border-t border-gray-200 pt-6">
+                            <Link
+                                to={`/admin-dashboard/employee/edit/${id}`}
+                                className="flex items-center justify-center space-x-2 px-8 py-3 bg-gradient-to-r from-teal-500 to-teal-600 text-white font-semibold rounded-lg hover:from-teal-600 hover:to-teal-700 transition-all shadow-lg hover:shadow-xl"
+                            >
+                                <FaEdit />
+                                <span>Edit Profile</span>
+                            </Link>
+                            <Link
+                                to="/admin-dashboard/employee"
+                                className="px-8 py-3 bg-white text-gray-700 font-semibold rounded-lg border-2 border-gray-300 hover:border-gray-400 hover:bg-gray-50 transition-all shadow-md hover:shadow-lg text-center"
+                            >
+                                Back to List
+                            </Link>
+                        </div>
+                         )}
                     </div>
                 </div>
             </div>
